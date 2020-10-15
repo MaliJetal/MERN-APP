@@ -1,0 +1,37 @@
+Settings
+tab size
+emmet.includeLanguages
+emmet.syntaxprofiles
+terminal.integrated.shell.windows
+editor.formatOnSave- true
+
+Extensions
+Live Server
+Prettier
+Bracket Pair Colorizer
+ES7
+Node.js module intellisense
+
+To run nodemon
+npm run 
+
+Session - 008
+JWT- 
+if u want to route ptivately for e.g. you dont want to give access to all users to run the app without login
+the we need to set the route as private and user will send a token knwon as JavaScript Web Token(JWT) with requests
+
+body-parser
+it is used to put req to post method, so whenever we want to send data to the post we access it with req.body
+e.g. req.body.email
+
+JWT and passport JWT
+JWT is simply the token when allows the user but
+Passport JWt is used to validate and extracts the user info from it
+bearer token- certain type of protocol
+
+Error response
+res.status(404).json(errors)
+
+
+
+
