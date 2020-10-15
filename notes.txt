@@ -13,13 +13,16 @@ ES7
 Node.js module intellisense
 
 To run nodemon
-npm run 
+npm run server
 
 Session - 008
 JWT- 
 if u want to route ptivately for e.g. you dont want to give access to all users to run the app without login
 the we need to set the route as private and user will send a token knwon as JavaScript Web Token(JWT) with requests
 
+I was having the same issue, what fixed it for me was editing my package.json file, and under scripts: {
+
+"build": "webpack -d && copy src\\index.html dist\\index.html /y && webpack-dev-server --content-base src --inline --port 3000"
 body-parser
 it is used to put req to post method, so whenever we want to send data to the post we access it with req.body
 e.g. req.body.email
