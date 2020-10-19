@@ -36,7 +36,12 @@ Error response
 res.status(404).json(errors)
 
 Git Commands
-
+- git init
+- git add .
+- git commit -m 'Creating Profile Route'
+- git status
+- git remote add origin https://github.com/MaliJetal/MERN-APP.git
+- git push -u origin main
 
 
 
