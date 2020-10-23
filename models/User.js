@@ -15,7 +15,7 @@ const UserSchema=({
         type: String,
         required:true
     },
-    avtar:{
+    avatar:{
         type: String,      
     },
     date:{
