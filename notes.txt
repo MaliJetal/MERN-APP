@@ -44,4 +44,12 @@ Git Commands
 - git push -u origin main
 
 
+Create React app
+npm i -g create-react-app
+npx create-react-app client
+npm i concurrently
+npm run dev
+
+
+
 
