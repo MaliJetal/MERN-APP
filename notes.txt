@@ -50,6 +50,12 @@ npx create-react-app client
 npm i concurrently
 npm run dev
 
+Functional Component
+Class Based Component
+
+jsx- Javascript Extensions
+html inside javascript
+
 
 
 
