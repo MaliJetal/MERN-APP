@@ -6,6 +6,7 @@ import store from './store';
 import './App.css';
 
 import { setCurrentUser } from './actions/authActions';
+import { logoutUser } from './actions/authActions';
 import setAuthToken from './utils/setAuthToken';
 
 import Navbar from './components/layout/Navbar';
@@ -14,6 +15,7 @@ import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 
+//Check for token
 if (localStorage.jwtToken) {
   //Set auth token header auth
   setAuthToken(localStorage.jwtToken);
@@ -21,6 +23,18 @@ if (localStorage.jwtToken) {
   const decoded = jwt_decode(localStorage.jwtToken);
   //Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
+
+  //Check for expired token
+  const currentTime = Date.now / 1000;
+  if (decoded.exp < currentTime) {
+    //Logout User
+    store.dispatch(logoutUser());
+
+    //TODO: Clear the current profile
+
+    //Redirect to login
+    window.locaation.href = '/login';
+  }
 }
 
 class App extends Component {
