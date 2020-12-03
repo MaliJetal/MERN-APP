@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { getCurrentProfile } from '../../actions/profileActions';
+import { clearCurrentProfile } from '../../actions/profileActions';
 
 class Dashboard extends Component {
   comoponentDidMount() {
@@ -17,4 +18,4 @@ class Dashboard extends Component {
   }
 }
 
-export default connect(null, { getCurrentProfile })(Dashboard);
+export default connect(null, { getCurrentProfile, clearCurrentProfile })(Dashboard);

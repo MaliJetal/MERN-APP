@@ -7,6 +7,7 @@ import './App.css';
 
 import { setCurrentUser } from './actions/authActions';
 import { logoutUser } from './actions/authActions';
+import { clearCurrentProfile } from './actions/profileActions';
 import setAuthToken from './utils/setAuthToken';
 
 import Navbar from './components/layout/Navbar';
@@ -31,10 +32,11 @@ if (localStorage.jwtToken) {
     //Logout User
     store.dispatch(logoutUser());
 
-    //TODO: Clear the current profile
+    //Clear the current profile
+    store.dispatch(clearCurrentProfile());
 
     //Redirect to login
-    window.locaation.href = '/login';
+    window.location.href = '/login';
   }
 }
 
