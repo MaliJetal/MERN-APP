@@ -18,3 +18,10 @@ export const getCurrentProfile = () => dispatch => {
       })
     )
 }
+
+//Profile Loading
+export const setProfileLoading = () => {
+  return {
+    type: PROFILE_LOADING
+  }
+}
