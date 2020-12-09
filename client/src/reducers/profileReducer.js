@@ -10,7 +10,7 @@ export default function (state = initialState, action) {
   switch (action.type) {
     case PROFILE_LOADING:
       return {
-        ...state,
+        ...state, //spread operator to skip state.name = state.name 
         loading: true
       };
     case GET_PROFILE:

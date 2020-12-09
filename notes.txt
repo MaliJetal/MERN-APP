@@ -60,5 +60,8 @@ Redux Installation
 - npm i redux react-redux redux-thunk
 
 
+Why creating private router in react different sperate component
+cause it is difficult - there is no default way to do this in react 4.
+soln - is to create actual component in this private routes put your actual route in tht component with some additional logic
 
-
+compare to full framework like angular it can easily create it by using "Guard"
