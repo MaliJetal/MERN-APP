@@ -6,7 +6,7 @@ import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
 
-class CreateProfile {
+class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,8 +26,22 @@ class CreateProfile {
       instagram: '',
       errors: {}
     }
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  onSubmit(e){
+    e.preventDefault();
+    console.log("Submit");
+  };
+  onChange(e){
+    this.setState({[e.target.name] : e.target.value});
+  };
+
   render() {
+    const {errors} = this.state;
+
     return (
       <div className="create-profile">
         <div className="conatiner">
@@ -38,6 +52,17 @@ class CreateProfile {
                 Let's get some lead information to make your profile stand out
               </p>
               <small className="d-block pb-3">* = required fields</small>
+              <form onSubmit={this.onSubmit}>
+                <TextFieldGroup
+                  placeholder="* Profile Handle"
+                  name="handle"
+                  value={this.state.handle}
+                  onChange={this.onChange}
+                  error={errors.handle}
+                  info="A unique handle for your profile URL. Your full name, company name,
+                  nickname"
+                />
+              </form>
             </div>
           </div>
         </div>
