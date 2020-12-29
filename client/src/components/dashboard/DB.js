@@ -3,16 +3,17 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { getCurrentProfile, deleteAccount} from '../../actions/profileActions';
+import ProfileActions from './ProfileActions';
+import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
-import Spinner from '../common/Spinner'
+import Spinner from '../common/Spinner';
 
 class Dashboard extends Component {
   comoponentDidMount() {
     this.props.getCurrentProfile();
   }
 
-  onDeleteClick(e){
+  onDeleteClick(e) {
     this.props.deleteAccount();
   }
   render() {
@@ -23,22 +24,22 @@ class Dashboard extends Component {
 
     if (profile === null || loading) {
       dashboardContent = <Spinner />
-    } else{
-          //Check if logged in user has profile data
-        if(Object.keys(profile).length > 0){
-          dashboardContent = (
-            <div>
-              <p className = "lead text-muted">
-                Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
-              </p>
-              <ProfileActions />
-              {/* ToDo: exp edu*/}
-              <div style={{marginBottom: '60px'}} />
-              <button onClick = {this.onDeleteClick} className="btn btn-danger">Delete My Account</button>
-            </div>
-          )
-        }
-        else {
+    } else {
+      //Check if logged in user has profile data
+      if (Object.keys(profile).length > 0) {
+        dashboardContent = (
+          <div>
+            <p className="lead text-muted">
+              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+            </p>
+            <ProfileActions />
+            {/* ToDo: exp edu*/}
+            <div style={{ marginBottom: '60px' }} />
+            <button onClick={this.onDeleteClick} className="btn btn-danger">Delete My Account</button>
+          </div>
+        )
+      }
+      else {
         //user is logged in but has no profile
         dashboardContent = (
           <div>

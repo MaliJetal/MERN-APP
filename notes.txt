@@ -17,8 +17,8 @@ npm run server
 
 Session - 008
 JWT- 
-if u want to route ptivately for e.g. you dont want to give access to all users to run the app without login
-the we need to set the route as private and user will send a token knwon as JavaScript Web Token(JWT) with requests
+if u want to route privately for e.g. you dont want to give access to all users to run the app without login
+the we need to set the route as private and user will send a token known as JavaScript Web Token(JWT) with requests
 
 I was having the same issue, what fixed it for me was editing my package.json file, and under scripts: {
 
@@ -65,3 +65,8 @@ cause it is difficult - there is no default way to do this in react 4.
 soln - is to create actual component in this private routes put your actual route in tht component with some additional logic
 
 compare to full framework like angular it can easily create it by using "Guard"
+
+Why use link not a href?
+Provides declarative, accessible navigation around your application.
+
+withRouter- It is used to redirect to another link. ex-> when you click btn you will redirect to user/addexperience link.
