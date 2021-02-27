@@ -6,8 +6,8 @@ class ProfileGithub extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clientId: '26c196bacea7db10cf48',
-      clientSecret: '0885cb690e07d2a93a6afb0891fb552fd9f7aa53',
+      clientId: '3c12ca8d1ee312a19194',
+      clientSecret: 'fad2d65b613f7391f5b490d30b97ec650fb0cf1e',
       count: 5,
       sort: 'created: asc',
       repos: []
@@ -30,6 +30,11 @@ class ProfileGithub extends Component {
       .catch(err => console.log(err));
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.profile.profile === null && this.props.profile.loading) {
+      this.props.history.push('/not-found');
+    }
+  }
   render() {
     const { repos } = this.state;
 

@@ -43,6 +43,8 @@ Git Commands
 - git remote add origin https://github.com/MaliJetal/MERN-APP.git
 - git push -u origin main
 
+-git pull 
+
 
 Create React app
 npm i -g create-react-app
@@ -70,3 +72,17 @@ Why use link not a href?
 Provides declarative, accessible navigation around your application.
 
 withRouter- It is used to redirect to another link. ex-> when you click btn you will redirect to user/addexperience link.
+
+REact-Redux
+connect parameters andn properties
+connect-> The connect() function connects a React component to a Redux store.
+mapStateToProps-> used to subscribe to Redux store updates.
+This means that any time the store is updated, mapStateToProps will be called. 
+store to props
+null=> do not subscribe to Redux store updates
+mapDispatchToProps-> used to dispatch actions to store O/P
+props to store
+
+Middleware 
+ middleware are intended to contain logic with side effects. In addition, middleware can modify dispatch to accept things that are not plain action objects
+ Middleware run each time an action is dispatched
