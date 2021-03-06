@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
@@ -56,7 +56,7 @@ class CommentForm extends Component {
                   name="text"
                   value={this.state.text}
                   onChange={this.onChange}
-                  error={errors.text}
+                  error={this.state.errors}
                 />
               </div>
               <button type="submit" className="btn btn-dark">
