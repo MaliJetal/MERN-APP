@@ -30,6 +30,6 @@ Functions
 - View Others Post
 - Like/Dislike Post
 - Comment Post
-- View Single Post by clicking it
+- View Single Post by clicking it.
 
 
